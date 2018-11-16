@@ -7,6 +7,7 @@ using System.ServiceModel;
 using System.Text;
 using RestoReviewService.Business;
 using RestoReviewService.Repository.Persistence;
+using Newtonsoft.Json;
 
 namespace RestoReviewService.Service
 {
@@ -70,6 +71,28 @@ namespace RestoReviewService.Service
             using (var restoContext = new UnitOfWork(new RestoContext()))
             {
                 ingredients = restoContext.Ingredients.GetIngredientsByCategory(categoryName).ToList();
+            }
+
+            return ingredients;
+        }
+
+        public List<Ingredient> GetAllIngredientsWithCategory()
+        {
+            //string ingredientsWCategory;
+
+            //using (var restoContext = new UnitOfWork(new RestoContext()))
+            //{
+            //    var ingredients = restoContext.Ingredients.GetAllIngredientsWithCategory().ToList();
+            //    ingredientsWCategory = JsonConvert.SerializeObject(ingredients);
+            //}
+
+            //return ingredientsWCategory;
+
+            List<Ingredient> ingredients;
+
+            using (var restoContext = new UnitOfWork(new RestoContext()))
+            {
+                ingredients = restoContext.Ingredients.GetAllIngredientsWithCategory().ToList();
             }
 
             return ingredients;

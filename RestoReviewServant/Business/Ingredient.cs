@@ -54,7 +54,7 @@ namespace RestoReviewService.Business
         // TODO: Setup the Category relationship
         [DataMember]
         public int CategoryId { get; set; }
-        //[DataMember]
+        [DataMember]
         public Category Category { get; set; }
     }
 }

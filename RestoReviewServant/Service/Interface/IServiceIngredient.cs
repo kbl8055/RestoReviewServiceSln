@@ -27,7 +27,7 @@ namespace RestoReviewService.Service.Interface
         [OperationContract]
         List<Ingredient> GetIngredientsByCategory(string categoryName);
 
-        //[OperationContract]
-        //List<Category> GetCategories();
+        [OperationContract]
+        List<Ingredient> GetAllIngredientsWithCategory();
     }
 }
